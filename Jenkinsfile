@@ -1,13 +1,11 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Deployment') {
-            steps {
-                // Your deployment steps here
-                sh 'chmod +x /var/lib/jenkins/workspace/finalpipeline/myscript.sh'
-                sh 'nohup /var/lib/jenkins/workspace/finalpipeline/myscript.sh &'
-            }
-        }
+stage('Deployment') {
+    steps {
+        sh 'chmod +x /var/lib/jenkins/workspace/finalpipeline/myscript.sh'
+        sh '/var/lib/jenkins/workspace/finalpipeline/myscript.sh > output.log 2>&1 &'
     }
+}
+
 }

@@ -1,21 +1,10 @@
-pipeline {
-    agent any
+venvname="venv"
 
-    stages {
-        stage('Deployment') {
-            steps {
-                script {
-                    sh 'chmod +x /var/lib/jenkins/workspace/finalpipeline/myscript.sh'
+if [ ! -d "$venvname" ]; then
+    python -m venv "$venvname"
+fi
 
-                    // Run the script in the background and redirect output
-                    try {
-                        sh '/var/lib/jenkins/workspace/finalpipeline/myscript.sh > output.log 2>&1 &'
-                    } catch (Exception e) {
-                        // Print an error message, but continue with the pipeline
-                        echo "Error running the script: ${e.message}"
-                    }
-                }
-            }
-        }
-    }
-}
+source "$venvname/bin/activate"
+pip install flask gunicorn
+
+gunicorn -w 4 -b 0.0.0.0:5230 --reload wsgi:app

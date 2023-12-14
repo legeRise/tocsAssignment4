@@ -3,7 +3,7 @@ venvname="venv"
 if [ ! -d "$venvname" ]; then
     echo "the env didn't existed"
     python -m venv "$venvname"
-    echo " now i have createdd"
+    echo " now i have created"
 fi
 echo "waiting for 4"
 sleep 4

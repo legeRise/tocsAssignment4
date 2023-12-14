@@ -1,7 +1,7 @@
+venvname="venv"
 
-if [ ! -d "venv" ]; then
-    python -m venv "venv"
-    sleep 4
+if [ ! -d "$venvname" ]; then
+    python -m venv "$venvname"
 fi
 
 source "$venvname/bin/activate"

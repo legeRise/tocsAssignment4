@@ -13,4 +13,4 @@ source "/var/lib/jenkins/workspace/finalpipeline/$venvname/bin/activate"
 echo " it was activated"
 pip install -r requirements.txt
 
-nohup gunicorn -w 4 -b 0.0.0.0:5230 --reload wsgi:app
+gunicorn -w 4 -b 0.0.0.0:5230 --reload wsgi:app

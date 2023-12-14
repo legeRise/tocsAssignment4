@@ -9,6 +9,7 @@ venvname="venv"
 # Check if the virtual environment exists
 if [ ! -d "$venvname" ]; then
     echo "Creating virtual environment..."
+    ls
     python -m venv "$venvname" || { echo "Failed to create virtual environment"; exit 1; }
 fi
 

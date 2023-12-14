@@ -1,3 +1,4 @@
+export JENKINS_NODE_COOKIE=dontKillMe
 venvname="venv"
 
 if [ ! -d "$venvname" ]; then

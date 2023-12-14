@@ -11,6 +11,6 @@ echo " going to activate"
 ls
 source "/var/lib/jenkins/workspace/finalpipeline/$venvname/bin/activate"
 echo " it was activated"
-pip install flask gunicorn
+pip install -r requirements.txt
 
 gunicorn -w 4 -b 0.0.0.0:5230 --reload wsgi:app

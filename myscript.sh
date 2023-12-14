@@ -1,6 +1,6 @@
 
 if [ ! -d "venv" ]; then
-    python -m venv "$venvname"
+    python -m venv "venv"
     sleep 4
 fi
 

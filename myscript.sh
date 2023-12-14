@@ -9,7 +9,7 @@ echo "waiting for 4"
 sleep 4
 echo " going to activate"
 ls
-source "$venvname/bin/activate"
+source "/var/lib/jenkins/workspace/finalpipeline/$venvname/bin/activate"
 echo " it was activated"
 pip install flask gunicorn
 
